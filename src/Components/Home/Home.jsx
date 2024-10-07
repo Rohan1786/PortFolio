@@ -95,39 +95,40 @@ const Home = () => {
           </button>
         </section>
 
-        {/* Profile Section */}
-        {showProfile && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 right-0 flex items-center justify-center p-8"
-            style={{ height: '100vh', zIndex: 10 }}
-          >
-            <div className={`flex flex-col md:flex-row items-center justify-between bg-white rounded-lg shadow-lg p-8 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-black'}`}>
-                <h2 className="text-2xl font-semibold mb-2">About Me</h2>
-                <p className="text-lg">I'm a passionate web developer with a knack for creating beautiful and user-friendly applications.</p>
-                <p className="mt-2">I have experience in full-stack development, specializing in Express.js , React, Node.js, and MongoDB.</p>
-                <p className="mt-2">Check out my work on GitHub and follow me on LinkedIn for updates!</p>
-              </div>
-              <div className="mt-4 md:mt-0">
-                <a
-                  href='https://www.linkedin.com/in/rohan-pawar-59621525a/'
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="https://media.licdn.com/dms/image/D5603AQG-rKdUJfcGVQ/profile-displayphoto-shrink_200_200/0/1673703454843?e=2147483647&v=beta&t=tcz7M1BiJNtvlB3RgvLBSC_4aSXW4cLhe-fML8GrkQ8"
-                    alt="My Profile"
-                    className="rounded-full ml-4 w-32 h-32 md:w-40 md:h-40"
-                  />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
+       {/* Profile Section */}
+{showProfile && (
+  <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 50 }}
+    transition={{ duration: 0.5 }}
+    className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8"
+    style={{ height: '100vh', zIndex: 20, backgroundColor: darkMode ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.9)' }}
+  >
+    <div className={`flex flex-col md:flex-row items-center justify-between rounded-lg shadow-lg p-8 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+      <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-black'}`}>
+        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+        <p className="text-lg">I'm a passionate web developer with a knack for creating beautiful and user-friendly applications.</p>
+        <p className="mt-2">I have experience in full-stack development, specializing in Express.js, React, Node.js, and MongoDB.</p>
+        <p className="mt-2">Check out my work on GitHub and follow me on LinkedIn for updates!</p>
+      </div>
+      <div className="mt-4 md:mt-0">
+        <a
+          href='https://www.linkedin.com/in/rohan-pawar-59621525a/'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://media.licdn.com/dms/image/D5603AQG-rKdUJfcGVQ/profile-displayphoto-shrink_200_200/0/1673703454843?e=2147483647&v=beta&t=tcz7M1BiJNtvlB3RgvLBSC_4aSXW4cLhe-fML8GrkQ8"
+            alt="My Profile"
+            className="rounded-full ml-4 w-32 h-32 md:w-40 md:h-40"
+          />
+        </a>
+      </div>
+    </div>
+  </motion.div>
+)}
+
 
         {/* Image Gallery Section with Links */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
