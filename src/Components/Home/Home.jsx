@@ -131,7 +131,7 @@ const Home = () => {
 
 
         {/* Image Gallery Section with Links */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        {/* <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -154,7 +154,57 @@ const Home = () => {
               </a>
             </motion.div>
           ))}
-        </section>
+        </section> */}
+
+<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+  {images.map((image, index) => (
+    <motion.div
+      key={index}
+      className={`overflow-hidden rounded-lg shadow-lg ${scrolling ? 'opacity-100' : 'opacity-50'}`}
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1, opacity: scrolling ? 1 : 0.8 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      style={{ width: '300px', height: '300px' }}
+    >
+      <div className="block w-full h-full flex flex-col">
+        {image.link.href ? (
+          <a
+            href={image.link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full h-full"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-5/6 h-4/6 object-contain mx-6"
+            />
+            <div className={`p-2 text-center ${image.customTextClass}`}>
+              <h2 className="text-xl font-semibold">{image.title}</h2>
+              <p className="text-sm">{image.description}</p>
+            </div>
+          </a>
+        ) : (
+          <Link
+            to={image.link.to}
+            className="w-full h-full"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-5/6 h-4/6 object-contain mx-6"
+            />
+            <div className={`p-2 text-center ${image.customTextClass}`}>
+              <h2 className="text-xl font-semibold">{image.title}</h2>
+              <p className="text-sm">{image.description}</p>
+            </div>
+          </Link>
+        )}
+      </div>
+    </motion.div>
+  ))}
+</section>
+
       </div>
       <Footer />
     </div>
@@ -162,11 +212,66 @@ const Home = () => {
 };
 
 // Image data with consistent size
+// const images = [
+//   {
+//     src: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+//     alt: 'GitHub',
+//     link: 'https://github.com/Rohan1786',
+//     title: 'GitHub Profile',
+//     description: 'Explore my repositories and open-source contributions.',
+//     customTextClass: 'text-blue-500',
+//   },
+ 
+//   {
+//     src: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg',
+//     alt: 'YouTube',
+//     link: {
+//       to: '/YoutubeProfilePage', // Internal link
+//     },
+//     title: 'YouTube Channel',
+//     description: 'Watch my latest videos on tech and Life Style as Engineering Student',
+//     customTextClass: 'text-red-500',
+//   },
+//   {
+//     src: 'https://www.jeffrobin.com/uploads/3/7/6/3/37633225/mini-project-copy_orig.jpg',
+//     alt: 'Project',
+//     link: 'https://github.com/yourusername/project1',
+//     title: 'Mini Projects',
+//     description: 'A cool projects I build why using latest technologies',
+//     customTextClass: 'text-green-500',
+//   },
+//   {
+//     src: 'https://pbs.twimg.com/profile_images/954684547635011584/fuI40nUt_400x400.jpg',
+//     alt: 'Project 1',
+//     link: 'https://github.com/yourusername/project1',
+//     title: 'Major Project',
+//     description: 'A cool Major Project It will Update soon',
+//     customTextClass: 'text-green-500',
+//   },
+//   {
+//     src: 'https://images.ctfassets.net/aq13lwl6616q/1pU68mCdL4C26KTxAUXmbe/f6a21624f217c0afec2829b33b2899b0/Thumbnail_-_Freelance_Course.jpeg',
+//     alt: 'Project 1',
+//     link: 'https://github.com/yourusername/project1',
+//     title: 'Freelancing Projects',
+//     description: 'It will Update soon',
+//     customTextClass: 'text-green-500',
+//   },
+//   {
+//     src: 'https://itechnolabs.ca/wp-content/uploads/2022/07/describe-the-mern-stack-itechnolabs.jpg',
+//     alt: 'Project 1',
+//     link: 'https://github.com/yourusername/project1',
+//     title: 'Full Stack Projects',
+//     description: 'Cool Full Stack Projects ',
+//     customTextClass: 'text-green-500',
+//   }
+// ];
 const images = [
   {
     src: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
     alt: 'GitHub',
-    link: 'https://github.com/Rohan1786',
+    link: {
+      href: 'https://github.com/Rohan1786', // External link
+    },
     title: 'GitHub Profile',
     description: 'Explore my repositories and open-source contributions.',
     customTextClass: 'text-blue-500',
@@ -174,7 +279,9 @@ const images = [
   {
     src: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg',
     alt: 'YouTube',
-    link: './YoutubeProfilePage',
+    link: {
+      to: '/YoutubeProfilePage', // Internal link
+    },
     title: 'YouTube Channel',
     description: 'Watch my latest videos on tech and Life Style as Engineering Student',
     customTextClass: 'text-red-500',
@@ -182,35 +289,39 @@ const images = [
   {
     src: 'https://www.jeffrobin.com/uploads/3/7/6/3/37633225/mini-project-copy_orig.jpg',
     alt: 'Project',
-    link: 'https://github.com/yourusername/project1',
+    link: {
+       href:'https://github.com/yourusername/project1', // External link
+    },
     title: 'Mini Projects',
     description: 'A cool projects I build why using latest technologies',
     customTextClass: 'text-green-500',
   },
+  // Add other projects similarly...
   {
-    src: 'https://pbs.twimg.com/profile_images/954684547635011584/fuI40nUt_400x400.jpg',
-    alt: 'Project 1',
-    link: 'https://github.com/yourusername/project1',
-    title: 'Major Project',
-    description: 'A cool Major Project It will Update soon',
-    customTextClass: 'text-green-500',
-  },
-  {
-    src: 'https://images.ctfassets.net/aq13lwl6616q/1pU68mCdL4C26KTxAUXmbe/f6a21624f217c0afec2829b33b2899b0/Thumbnail_-_Freelance_Course.jpeg',
-    alt: 'Project 1',
-    link: 'https://github.com/yourusername/project1',
-    title: 'Freelancing Projects',
-    description: 'It will Update soon',
-    customTextClass: 'text-green-500',
-  },
-  {
-    src: 'https://itechnolabs.ca/wp-content/uploads/2022/07/describe-the-mern-stack-itechnolabs.jpg',
-    alt: 'Project 1',
-    link: 'https://github.com/yourusername/project1',
-    title: 'Full Stack Projects',
-    description: 'Cool Full Stack Projects ',
-    customTextClass: 'text-green-500',
-  }
+        src: 'https://pbs.twimg.com/profile_images/954684547635011584/fuI40nUt_400x400.jpg',
+        alt: 'Project 1',
+        link: {
+          href:'https://github.com/yourusername/project1',
+        },
+        title: 'Major Project',
+        description: 'A cool Major Project It will Update soon',
+        customTextClass: 'text-green-500',
+      },
+      {
+        src: 'https://images.ctfassets.net/aq13lwl6616q/1pU68mCdL4C26KTxAUXmbe/f6a21624f217c0afec2829b33b2899b0/Thumbnail_-_Freelance_Course.jpeg',
+        alt: 'Project 1',
+        link:{ href:'https://github.com/yourusername/project1',},
+        title: 'Freelancing Projects',
+        description: 'It will Update soon',
+        customTextClass: 'text-green-500',
+      },
+      {
+        src: 'https://itechnolabs.ca/wp-content/uploads/2022/07/describe-the-mern-stack-itechnolabs.jpg',
+        alt: 'Project 1',
+        link: {href:'https://github.com/yourusername/project1',},
+        title: 'Full Stack Projects',
+        description: 'Cool Full Stack Projects ',
+        customTextClass: 'text-green-500',
+      }
 ];
-
 export default Home;
