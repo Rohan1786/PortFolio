@@ -12,6 +12,10 @@ const YoutubeProfilePage = () => {
    
     window.location.href = 'https://www.codechef.com/users/rohan_pawar';
   };
+  const GFG = () => {
+   
+    window.location.href = 'https://www.geeksforgeeks.org/user/user_imufgxt7hce/';
+  };
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -132,6 +136,13 @@ const YoutubeProfilePage = () => {
       onClick={CFG}
     />
   </div>
+  <div className=' flex justify-center'>
+  <img
+      src="https://miro.medium.com/v2/resize:fit:799/0*ilw552fVUGbwIzbE.jpg" // Replace with your actual goal-related image
+      alt="CodeChef Problem Solving"
+      className="w-full sm:w-1/2 h-auto mb-4 rounded-lg"
+      onClick={GFG}
+    /></div>
 <div className="flex flex-col items-center text-center">
             <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               I'm currently focused on improving my problem-solving skills on LeetCode and codechef. Follow my progress as I tackle medium and hard problems to prepare for coding interviews!
