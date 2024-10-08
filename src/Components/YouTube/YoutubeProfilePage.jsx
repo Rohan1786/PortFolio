@@ -15,6 +15,10 @@ const YoutubeProfilePage = () => {
   const GFG = () => {
    
     window.location.href = 'https://www.geeksforgeeks.org/user/user_imufgxt7hce/';
+    
+  };
+  const Hackerank = () => {
+    window.location.href = 'https://www.hackerrank.com/profile/rp9522203';
   };
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -136,13 +140,21 @@ const YoutubeProfilePage = () => {
       onClick={CFG}
     />
   </div>
-  <div className=' flex justify-center'>
+  <div className='flex flex-col sm:flex-row'>
   <img
-      src="https://miro.medium.com/v2/resize:fit:799/0*ilw552fVUGbwIzbE.jpg" // Replace with your actual goal-related image
-      alt="CodeChef Problem Solving"
-      className="w-full sm:w-1/2 h-auto mb-4 rounded-lg"
-      onClick={GFG}
-    /></div>
+    src="https://miro.medium.com/v2/resize:fit:799/0*ilw552fVUGbwIzbE.jpg" // Replace with your actual goal-related image
+    alt="CodeChef Problem Solving"
+    className="w-full sm:w-1/2 h-auto mb-4 sm:mb-0 rounded-lg"
+    onClick={GFG}
+  />
+  <img
+    src="https://wizardsourcer.com/wp-content/uploads/2021/10/HackerRank-logo.png" // Replace with your actual goal-related image
+    alt="CodeChef Problem Solving"
+    className="w-full sm:w-1/2 h-auto rounded-lg"
+    onClick={Hackerank}
+  />
+</div>
+
 <div className="flex flex-col items-center text-center">
             <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               I'm currently focused on improving my problem-solving skills on LeetCode and codechef. Follow my progress as I tackle medium and hard problems to prepare for coding interviews!
