@@ -96,9 +96,7 @@ const Home = () => {
           </button>
         </section>
         {/* about me change that for responsive web design */}
-        <div className=''>
-        <AboutMeSection/>
-        </div>
+        
         
        {/* Profile Section */}
 {showProfile && (
@@ -211,65 +209,14 @@ const Home = () => {
 </section>
 
       </div>
+        <AboutMeSection/>
+       
       <Footer />
+
     </div>
+
   );
 };
-
-// Image data with consistent size
-// const images = [
-//   {
-//     src: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
-//     alt: 'GitHub',
-//     link: 'https://github.com/Rohan1786',
-//     title: 'GitHub Profile',
-//     description: 'Explore my repositories and open-source contributions.',
-//     customTextClass: 'text-blue-500',
-//   },
- 
-//   {
-//     src: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg',
-//     alt: 'YouTube',
-//     link: {
-//       to: '/YoutubeProfilePage', // Internal link
-//     },
-//     title: 'YouTube Channel',
-//     description: 'Watch my latest videos on tech and Life Style as Engineering Student',
-//     customTextClass: 'text-red-500',
-//   },
-//   {
-//     src: 'https://www.jeffrobin.com/uploads/3/7/6/3/37633225/mini-project-copy_orig.jpg',
-//     alt: 'Project',
-//     link: 'https://github.com/yourusername/project1',
-//     title: 'Mini Projects',
-//     description: 'A cool projects I build why using latest technologies',
-//     customTextClass: 'text-green-500',
-//   },
-//   {
-//     src: 'https://pbs.twimg.com/profile_images/954684547635011584/fuI40nUt_400x400.jpg',
-//     alt: 'Project 1',
-//     link: 'https://github.com/yourusername/project1',
-//     title: 'Major Project',
-//     description: 'A cool Major Project It will Update soon',
-//     customTextClass: 'text-green-500',
-//   },
-//   {
-//     src: 'https://images.ctfassets.net/aq13lwl6616q/1pU68mCdL4C26KTxAUXmbe/f6a21624f217c0afec2829b33b2899b0/Thumbnail_-_Freelance_Course.jpeg',
-//     alt: 'Project 1',
-//     link: 'https://github.com/yourusername/project1',
-//     title: 'Freelancing Projects',
-//     description: 'It will Update soon',
-//     customTextClass: 'text-green-500',
-//   },
-//   {
-//     src: 'https://itechnolabs.ca/wp-content/uploads/2022/07/describe-the-mern-stack-itechnolabs.jpg',
-//     alt: 'Project 1',
-//     link: 'https://github.com/yourusername/project1',
-//     title: 'Full Stack Projects',
-//     description: 'Cool Full Stack Projects ',
-//     customTextClass: 'text-green-500',
-//   }
-// ];
 const images = [
   {
     src: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
