@@ -1,0 +1,24 @@
+/* AboutMeSection.css */
+
+.text-container {
+    height: 6rem; /* Set a fixed height (adjust as needed) */
+    display: flex; /* Use flex to center the text vertically */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    overflow: hidden; /* Hide overflow to prevent excess text from showing */
+    padding: 1rem; /* Add padding for better spacing */
+    border: 1px solid transparent; /* Optional: add a border for visibility */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+  }
+  
+  .text-xl {
+    transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Break long words to fit within the container */
+  }
+  
+  /* Optional: Change the border color when the text changes */
+  .text-container:hover {
+    border-color: rgba(255, 255, 255, 0.5); /* Change to your preferred hover color */
+  }
+  

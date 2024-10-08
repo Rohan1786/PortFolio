@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import AboutMeSection from '../AboutMeHome/AboutMeSection';
 
 const Home = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -94,7 +95,11 @@ const Home = () => {
             {darkMode ? 'Light Mode' : 'Dark Mode'}
           </button>
         </section>
-
+        {/* about me change that for responsive web design */}
+        <div className=''>
+        <AboutMeSection/>
+        </div>
+        
        {/* Profile Section */}
 {showProfile && (
   <motion.div
