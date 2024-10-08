@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AboutMeSection.css'; // Import the custom CSS file
+import { div } from 'framer-motion/client';
 
 const AboutMeSection = () => {
   const [visibleText, setVisibleText] = useState(0);
@@ -20,15 +21,16 @@ const AboutMeSection = () => {
   }, []);
 
   return (
-    <div>
+    <>
+    <div className="">
       <section className="bg-purple-500 text-white py-16">
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6">
           {/* Profile Image */}
           <div className="w-full lg:w-1/3 flex justify-center mb-8 lg:mb-0">
             <img
-              src="https://media.licdn.com/dms/image/D5603AQG-rKdUJfcGVQ/profile-displayphoto-shrink_200_200/0/1673703454843?e=2147483647&v=beta&t=tcz7M1BiJNtvlB3RgvLBSC_4aSXW4cLhe-fML8GrkQ8"
+              src="https://media.licdn.com/dms/image/D5603AQG-rKdUJfcGVQ/profile-displayphoto-shrink_200_200/0/1673703454843?e=2147483647&v=beta&t=tcz7M1BiJNtvlB3RgvLBSC_4aSXW4cLhe-fML8GrkQ8" // Update this path to your profile image
               alt="Profile"
-              className="rounded-full border-4 border-gray-500 shadow-lg h-64 w-64 object-cover transform hover:scale-110 transition duration-500 ease-in-out"
+              className="rounded-full border-4 border-gray-500 shadow-lg h-4/2 w-6/2 object-cover transform hover:scale-110 transition duration-500 ease-in-out"
             />
           </div>
 
@@ -37,7 +39,7 @@ const AboutMeSection = () => {
             <h2 className="text-4xl font-semibold mb-4">{textArray[0]}</h2>
             <div
               className={`text-xl mb-4 leading-relaxed text-container transition-opacity duration-500 ease-in-out`}
-              style={{ minHeight: '160px' }} // Ensure consistent height
+              style={{ minHeight: '160px' }} // Adjust this value as needed
             >
               <p>{textArray[visibleText]}</p>
             </div>
@@ -45,7 +47,9 @@ const AboutMeSection = () => {
         </div>
       </section>
     </div>
-  );
+  </>
+);
 };
+
 
 export default AboutMeSection;
