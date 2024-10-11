@@ -4,6 +4,9 @@ import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import AboutMeSection from '../AboutMeHome/AboutMeSection';
+import Section from '../SectionHome/SectionHome';
+
+
 
 const Home = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -47,7 +50,7 @@ const Home = () => {
   };
 
   return (
-    <div className={darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}>
+    <div className={darkMode ? 'bg-zinc-700 text-white' : 'bg-gray-100 text-black'}>
       <Navbar />
 
       <div className="relative min-h-screen flex flex-col items-center justify-center">
@@ -204,15 +207,19 @@ const Home = () => {
           </Link>
         )}
       </div>
+
     </motion.div>
   ))}
 </section>
 
       </div>
         <AboutMeSection/>
-       
+        <div>
+          <Section/>
+        </div>
+        
       <Footer />
-
+     
     </div>
 
   );
