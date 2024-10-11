@@ -44,7 +44,7 @@ const About = () => {
             <p className="text-gray-600">
               I run a YouTube channel where I vlog about my life as a student, and tips for aspiring developers. Check out my channel for some cool content on web development and coding challenges like Hackathon Experience!
             </p>
-            <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Visit My YouTube Channel</a>
+            <a href="https://www.youtube.com/@VinkiRohanVlog" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Visit My YouTube Channel</a>
           </div>
 
           {/* Social Links */}
@@ -55,7 +55,7 @@ const About = () => {
             <a href="https://www.linkedin.com/in/rohan-pawar-59621525a/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
               <FontAwesomeIcon icon={faLinkedin} size="3x" className="text-blue-700" />
             </a>
-            <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+            <a href="https://www.youtube.com/@VinkiRohanVlog" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
               <FontAwesomeIcon icon={faYoutube} size="3x" className="text-red-600" />
             </a>
           </div>
