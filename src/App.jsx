@@ -7,7 +7,8 @@ import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
 import { ThemeProvider } from './ThemeContext';
 import { AnimatePresence } from 'framer-motion';
-import PageTransitionWrapper from './Components/PageTransitionWrapper';
+import PageTransitionWrapper from './Components/pageTransitionWrapper';
+
 
 const AnimatedRoutes = () => {
   const location = useLocation();

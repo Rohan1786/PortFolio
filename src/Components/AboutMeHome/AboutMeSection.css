@@ -1,5 +1,5 @@
 /* AboutMeSection.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
 .text-container {
     height: 6rem; /* Set a fixed height (adjust as needed) */
     display: flex; /* Use flex to center the text vertically */
@@ -21,4 +21,8 @@
   .text-container:hover {
     border-color: rgba(255, 255, 255, 0.5); /* Change to your preferred hover color */
   }
-  
+ 
+
+.font-Qwitcher {
+  font-family: 'Qwitcher Grypen', cursive; /* Apply the font to the specific class */
+}
