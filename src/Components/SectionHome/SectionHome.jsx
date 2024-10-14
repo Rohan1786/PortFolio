@@ -36,9 +36,12 @@ const Section = () => {
       </div>
       
       {/* Video section */}
+      
       <div className='flex justify-center items-center w-full lg:w-1/2'>
+     
         <img
-          src="coding.gif"
+          // src="coding.gif"
+          src="https://camo.githubusercontent.com/f110d81f681e9003ba1d289df38ab63e4e25854c6d9af7d406ebb742406048fc/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f66622f63362f66332f66626336663331626433623834313539343730623937336163613765306639372e676966"
           className='w-4/5 h-auto max-w-md' 
           autoPlay 
           loop 
