@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import AboutMeSection from '../AboutMeHome/AboutMeSection';
 import Section from '../SectionHome/SectionHome';
+import LoadingSpinner from './LoadingSpinner';
+
 
 
 
@@ -12,6 +14,7 @@ const Home = () => {
   const [scrolling, setScrolling] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const headingText = "Welcome to My Portfolio";
   const words = headingText.split(' ');
@@ -31,6 +34,9 @@ const Home = () => {
       setShowProfile(false);
     }, duration);
   };
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

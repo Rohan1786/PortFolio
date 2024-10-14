@@ -1,45 +1,40 @@
-import React, { useState } from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import { BrowserRouter,Routes,Route} from "react-router-dom";
+import React from 'react';
+import Navbar from './Components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import YoutubeProfilePage from './Components/YouTube/YoutubeProfilePage';
 import Contact from './Components/Contact/Contact';
-
-import { ThemeProvider } from './ThemeContext';
 import About from './Components/About/About';
+import { ThemeProvider } from './ThemeContext';
+import { AnimatePresence } from 'framer-motion';
+import PageTransitionWrapper from './Components/PageTransitionWrapper';
 
-
-
-
-
-
-const App = () => {
-  
+const AnimatedRoutes = () => {
+  const location = useLocation();
 
   return (
-    
-    
-    <>
-      {/* <button className='bg-white text-black'
-     onClick={getUser} >Hello Click me</button>
-      <Navbar user={user}/> */}
-       <ThemeProvider>
-     
-   
-      <BrowserRouter>
-      <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/YoutubeProfilePage' element={<YoutubeProfilePage/>}/>
-      <Route path='/About' element={<About />}/>
-      <Route path='/Contact' element={<Contact/>}/>
-    
-      
-      
-        </Routes>
-        </BrowserRouter>
-        </ThemeProvider>
-    </>
-  )
-}
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransitionWrapper><Home /></PageTransitionWrapper>} />
+        <Route path="/YoutubeProfilePage" element={<PageTransitionWrapper><YoutubeProfilePage /></PageTransitionWrapper>} />
+        <Route path="/About" element={<PageTransitionWrapper><About /></PageTransitionWrapper>} />
+        <Route path="/Contact" element={<PageTransitionWrapper><Contact /></PageTransitionWrapper>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <>
+      <ThemeProvider>
+        <BrowserRouter>
+          {/* Assuming Navbar is present across all routes */}
+          <AnimatedRoutes />
+        </BrowserRouter>
+      </ThemeProvider>
+    </>
+  );
+};
+
+export default App;
